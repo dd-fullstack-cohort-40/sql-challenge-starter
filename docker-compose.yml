@@ -1,0 +1,16 @@
+version: "3"
+services:
+  sql:
+    build: ./sql
+    ports:
+      - 54321:5432
+    platform: linux/x86_64
+    volumes:
+      - sql-challenge:/var/lib/postgresql/data/
+    env_file:
+      - ./project.env
+
+volumes:
+  sql-challenge:
+
+
